@@ -1,5 +1,7 @@
 # Simple TodoList
 
+На данный момент, это мой первый проект, написанный на языке **Go**
+
 ## Функция Add
 ```
 func Add(title string) Todo
