@@ -10,20 +10,6 @@ type Todo struct {
 
 var todos []Todo
 
-func main() {
-	tempTodo := Add("Make a breakfast")
-	tempTodo.Complete()
-	tempTodo.Edit("Make a coffee!")
-
-	testTodo := Add("Make a breakfast")
-	testTodo.Complete()
-	testTodo.Complete()
-	Remove(2)
-	newTodo := Add("Make a breakfast")
-	newTodo.Complete()
-	fmt.Println(todos)
-}
-
 func (t *Todo) Edit(title string) {
 	for i, todo := range todos {
 		if todo.Id == t.Id {
@@ -56,4 +42,13 @@ func Remove(id int) Todo {
 		}
 	}
 	return Todo{}
+}
+
+func Info(id int) (Todo, error) {
+	for _, todo := range todos {
+		if todo.Id == id {
+			return todo, nil
+		}
+	}
+	return Todo{}, errors.New("todo not found")
 }
