@@ -31,6 +31,15 @@ func (t *Todo) Edit(title string)
 
 > Функция ***Edit*** редактирует объект, изменяя его ***title***.
 
+## Функция Info
+
+```go
+func Info(id int) (Todo, error)
+```
+
+> Функция ***Info*** возвращает объект Todo, а так же ошибку. 
+> Если же объект не найден, то возвращает ошибку: "todo not found", иначе nil
+
 
 # Структура Todo
 
